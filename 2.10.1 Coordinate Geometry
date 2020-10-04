@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+   double x1 = 1.0;
+   double y1 = 2.0;
+   double x2 = 1.0;
+   double y2 = 5.0;
+   double pointsDistance = 0.0;
+
+   pointsDistance = sqrt(pow(x2 - x1, 2.0) + pow(y2 - y1, 2.0));
+
+   cout << "Points distance: " << pointsDistance << endl;
+   
+   /*Can also be done by declaring 2 more variables.
+   double itemX = pow(x2 - x1, 2.0);
+   double itemY = pow(y2 - y1, 2.0);
+   pointsDistance = sqrt(itemX + itemY);
+   */
+
+   return 0;
+}
