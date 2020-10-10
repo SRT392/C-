@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+   string passCode;
+
+   cin >> passCode;
+//using a for loop to loop through the string and check if [i] is alpha...
+   for (int i = 0; i < passCode.length(); i++) {
+      if(isalpha(passCode[i])) {
+         passCode[i] = '_';
+         }
+      }
+
+   cout << passCode << endl;
+   return 0;
+}
