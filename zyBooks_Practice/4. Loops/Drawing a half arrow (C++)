@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int arrowBaseHeight;
+   int arrowBaseWidth;
+   int arrowHeadWidth;
+   
+   cout << "Enter arrow base height:" << endl;
+   cin >> arrowBaseHeight;
+   
+   cout << "Enter arrow base width:" << endl;
+   cin >> arrowBaseWidth;
+   
+   cout << "Enter arrow head width:" << endl;
+   cin >> arrowHeadWidth;
+   cout << endl;
+   /*
+   (2) Modify the given program to use a loop to output 
+   an arrow base of width arrowBaseWidth. Use a nested loop 
+   in which the inner loop draws the *’s, and the outer loop 
+   iterates a number of times equal to the height of the arrow base.
+   (3) Modify the given program to use a loop to output an arrow head 
+   of width arrowHeadWidth. Use a nested loop in which the inner loop 
+   draws the *’s, and the outer loop iterates a number of times equal to the 
+   height of the arrow head.
+   (4) Modify the given program to only accept an arrow head width that is 
+   larger than the arrow base width. Use a loop to continue prompting the user 
+   for an arrow head width until the value is larger than the arrow base width.
+   */
+   
+   while ( arrowHeadWidth <= arrowBaseWidth) {    //loop to ask the user to enter arrow width, if it is equal to or smaller than the base.
+      cout << "Enter arrow head width that is larger than the arrow base:" << endl;
+      cin >> arrowHeadWidth;
+      }
+   
+   for(int row=0; row <arrowBaseHeight;row++) {      //creates the base
+      for(int wid=0; wid < arrowBaseWidth; wid++) {  
+         cout << "*";                                //(loops)outputs the amount of * based on the number of arrow width.
+         }
+         cout << endl;                              //(loops) a newline for the amount of Base Height requested.
+      }
+      
+   for(int i=1; i <= arrowHeadWidth ;i++) {         //sets the loop for arrow head width, if 5 then it loop it 5 times
+      for(int r=arrowHeadWidth; r >= i; r--) {      //as long as loop is true the output is *, when false, the output is newline and the loop compares the outer loop again.
+         cout << "*";
+         }
+         cout << endl;
+      }
+   
+   return 0;
+}
