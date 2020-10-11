@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+/* 
+Modify the program to use a nested loop to output a right triangle of height triangleHeight. 
+The first line will have one user-specified character, such as % or *. Each subsequent line will 
+have one additional user-specified character until the number in the triangle's base reaches triangleHeight. 
+Output a space after each user-specified character, including after the line's last user-specified character. 
+*/
+
+int main() {
+   char triangleChar;
+   int triangleHeight;
+
+   cout << "Enter a character:" << endl;
+   cin >> triangleChar;
+   
+   cout << "Enter triangle height:" << endl;
+   cin >> triangleHeight;   //user enters the height of the triangle
+   cout << endl;
+      
+   for(int row=1; row<=triangleHeight; row++){  //will run the loop equal to the length requested by the user.
+      for(int col=1; col<=row; col++){          //this nested loop adds the "char" and a space to each row
+         cout << triangleChar << " ";
+         }
+         cout << endl;                          // when the nested loop is done, a new line is added, then the original loop tries again.
+      }
+   
+   return 0;
+}
