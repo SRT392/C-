@@ -1,0 +1,139 @@
+/* New Year’s Eve Party Dilemma 
+You are throwing a giant party at your penthouse in a 25-story building and have invited all your family 
+and friends to celebrate New Year’s Eve. You have also requested services from a party planning company that 
+will arrange DJs, bartenders, servers, caterers, and a band. The main entry to your penthouse is through a 
+standard elevator with a weight capacity of 2,500 pounds. Since you do not want your guests taking the stairs 
+to the 25th floor, you need to program your robot to determine if the elevator can support the weight of your guests.
+--------------------------------------------------------------------------------------------------------------------
+I wrote my program using while, if and else if statements, I feel like it could be made much smaller by using a for 
+and asking for the exact weight. 
+*/
+#include <iostream>
+#include <string>
+
+int main() {
+    using std::cout;
+    using std::cin;
+    using std::endl;
+    using std::string;
+
+    string rider, guest, status;
+    int equipmentWeight;
+    double totalCapacity = 2500;
+    double male = 197.9;
+    double female = 170.6;
+    double totalRiderWeight = 0;
+    int numberOfMales = 0;
+    int numberOfFemales = 0;
+    double differenceInWeight;
+
+
+    cout << "Welcome, this elevator only supports up to 2500lbs per trip." << endl;
+    cout << "Which type of rider are you? (guest/service)" << endl;
+    getline(cin, rider);
+        if (rider == "guest" || rider == "Guest") {
+            cout << "Are you male or female? (male/female)" << endl;
+            getline(cin, guest);
+            if (guest == "male") {
+                cout << "How many males are going into the elevator?" << endl;
+                cin >> numberOfMales;
+                totalRiderWeight = (male * numberOfMales) + totalRiderWeight;
+            }
+            else if (guest == "female") {
+                cout << "How many females are going into the elevator?" << endl;
+                cin >> numberOfFemales;
+                totalRiderWeight = (female * numberOfFemales) + totalRiderWeight;
+            }
+        }
+        if (rider == "service" || rider == "Service") {
+            cout << "Are you male or female?" << endl;
+            cin >> guest;
+            if (guest == "male" || guest == "Male"){
+                cout << "How many males are getting on the elevator?" << endl;
+                cin >> numberOfMales;
+                totalRiderWeight = (male * numberOfMales) + totalRiderWeight;
+                cout << "How many lbs of equipment are you bringing along?" << endl;
+                cin >> equipmentWeight;
+                totalRiderWeight = totalRiderWeight + equipmentWeight;
+                cout << "Thanks, the total weight now is " << totalRiderWeight << "lbs." << endl;
+            }
+            if (guest == "female" || guest == "Female") {
+                cout << "How many females are getting on the elevator?" << endl;
+                cin >> numberOfFemales;
+                totalRiderWeight = (female * numberOfFemales) + totalRiderWeight;
+                cout << "How many lbs of equipment are you bringing along?" << endl;
+                cin >> equipmentWeight;
+                totalRiderWeight = totalRiderWeight + equipmentWeight;
+                cout << "Thanks, the total weight now is " << totalRiderWeight << "lbs." << endl;
+            }
+
+        }
+    /* In case the first time there was more space available we ask if there are any more people getting on */
+    while (totalRiderWeight < totalCapacity) {
+        cout << "Who else is getting on the elevator? (guest/service/nobody)" << endl;
+        cin >> rider;
+        if (rider == "guest" || rider == "Guest") {
+            cout << "Are you male or female? (male/female)" << endl;
+            cin >> guest;
+            if (guest == "male") {
+                cout << "How many males are going into the elevator?" << endl;
+                cin >> numberOfMales;
+                totalRiderWeight = (male * numberOfMales) + totalRiderWeight;
+            }
+            else if (guest == "female") {
+                cout << "How many females are going into the elevator?" << endl;
+                cin >> numberOfFemales;
+                totalRiderWeight = (female * numberOfFemales) + totalRiderWeight;
+            }
+        }
+        if (rider == "service" || rider == "Service") {
+            cout << "Are you male or female? (male/female)" << endl;
+            cin >> guest;
+            if (guest == "male" || guest == "Male") {
+                cout << "How many males are getting on?" << endl;
+                cin >> numberOfMales;
+                totalRiderWeight = (male * numberOfMales) - totalRiderWeight;
+                cout << "How many lbs of equipment are you bringing along?" << endl;
+                cin >> equipmentWeight;
+                totalRiderWeight = totalRiderWeight + equipmentWeight;
+                cout << "Thanks, the total weight now is " << totalRiderWeight << "lbs." << endl;
+
+            }
+            else if (guest == "female" || guest == "female") {
+                cout << "How many females are getting on?" << endl;
+                cin >> numberOfFemales;
+                totalRiderWeight = (female * numberOfFemales) - totalRiderWeight;
+                cout << "How many lbs of equipment are you bringing along?" << endl;
+                cin >> equipmentWeight;
+                totalRiderWeight = totalRiderWeight + equipmentWeight;
+                cout << "Thanks, the total weight now is " << totalRiderWeight << "lbs." << endl;
+
+            }
+        }
+        if (rider == "nobody" || rider == "Nobody") {
+            cout << "The total weight is: " << totalRiderWeight << "lbs; You may go up." << endl;
+            return 0;
+        }
+    }
+
+    while (totalRiderWeight > totalCapacity) {
+            differenceInWeight = totalCapacity - totalRiderWeight;
+            cout << "You are " << abs(differenceInWeight) << "lbs over capacity. Please remove one or more people to be"
+                                                        "in capacity compliance." << endl;
+            cout << "Will a male or female get off the elevator? (male/female)" << endl;
+            cin >> guest;
+            if(guest == "male") {
+                cout << "How many are getting off?" << endl;
+                cin >> numberOfMales;
+                totalRiderWeight = totalRiderWeight - (male * numberOfMales);
+            }
+            else if (guest == "female") {
+                cout << "How many are getting off?" << endl;
+                cin >> numberOfFemales;
+                totalRiderWeight = totalRiderWeight - (female * numberOfFemales);
+            }
+    }
+    cout << "The total weight is now " << totalRiderWeight << "lbs; You may go up." << endl;
+
+    return 0;
+}
