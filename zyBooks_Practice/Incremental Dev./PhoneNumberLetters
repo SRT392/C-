@@ -3,6 +3,7 @@
 using namespace std;
 
 //Be able to enter letters like 1-800-Comcast and convert it into all digits.
+//Practice
 
 int main() {
    string phoneStr;   // User input: Phone number string
