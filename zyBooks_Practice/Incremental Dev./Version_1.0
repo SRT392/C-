@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+//Version 1, basic program to grab input and print what the input is for that particular element.
+
 int main() {
    string phoneStr;   // User input: Phone number string
    int i;             // Current element in phone number string
