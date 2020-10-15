@@ -13,10 +13,14 @@ int main() {
    cout << "Numbers only: ";
    for (i = 0; i < phoneStr.size(); ++i) { // For each element
       currChar = phoneStr.at(i);
-      if ((currChar >= '0') && (currChar <= '9')) {
+      if (((currChar >= '0') && (currChar <= '9')) || (currChar == '-')) {
          cout << currChar; // Print element as is
       }
-      // FIXME: Add else-if branches for letters and hyphen
+      else if ( ((currChar >= 'a') && (currChar <= 'c')) ||
+               ((currChar >= 'A') && (currChar <= 'C')) ) {
+         cout << "2";
+      }
+      // FIXME: Add remaining else-if branches
       else {
          cout << '?';
       }
