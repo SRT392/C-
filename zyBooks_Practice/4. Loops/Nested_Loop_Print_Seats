@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+   int numRows;
+   int numColumns;
+   int currentRow;
+   int currentColumn;
+   char currentColumnLetter;
+
+   cin >> numRows;
+   cin >> numColumns;
+
+   for (currentRow=1; currentRow <= numRows; currentRow++){  //Setup all rows
+      currentColumnLetter = 'A';                             //Start the first column with "A"
+         for(currentColumn = 1; currentColumn <= numColumns; currentColumn++ ) {  //Initialize the columns
+            cout << currentRow << currentColumnLetter << " ";                     //print out Row+Column then space.
+            ++currentColumnLetter;    //increment the Letter +1 using (++).                                        
+         }  //Loop back to the start and check current column number against the total number of columns, run again until <=
+      
+      }
+
+   cout << endl;
+
+   return 0;
+}
