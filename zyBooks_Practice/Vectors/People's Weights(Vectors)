@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+using namespace std;
+
+int main() {
+   
+   int numPeople = 5;
+   vector<double> peoplesWeight(numPeople);
+   double average, max, total;
+   
+   
+      for (int i = 0; i < numPeople; ++i) {
+      cout << "Enter weight " << (i+1) << ":" << endl;
+      cin >> peoplesWeight.at(i);
+      cout << peoplesWeight.at(i); << endl;
+      }
+
+   cout << "You entered: ";
+      for (int i = 0; i < peoplesWeight.size(); i++) {
+         cout << peoplesWeight[i] << " ";
+         }
+         
+      cout << endl;
+      cout << endl;
+      
+      total = accumulate(peoplesWeight.begin(),peoplesWeight.end(),0.0);
+      average = total/peoplesWeight.size();
+      max = peoplesWeight.at(0);
+      for (int i=0; i < peoplesWeight.size(); ++i){
+         if(peoplesWeight.at(i) > max) {
+            max = peoplesWeight.at(i);
+            }   
+      }
+      
+      cout << "Total weight: " << total << endl;
+      cout << "Average weight: " << average << endl;
+      cout << "Max weight: " << max << endl;
+
+
+   return 0;
+}
