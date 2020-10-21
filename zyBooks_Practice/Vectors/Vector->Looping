@@ -1,0 +1,76 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  //Using NUM_VALS to enter the desired size for the vector.
+   const int NUM_VALS = 4;
+   vector<int> courseGrades(NUM_VALS);
+   int i;
+
+   courseGrades.at(0) = 7;
+   courseGrades.at(1) = 9;
+   courseGrades.at(2) = 11;
+   courseGrades.at(3) = 10;
+
+   //Loop forward through the vector.
+   for(int i=0; i<courseGrades.size();i++) {
+      cout << courseGrades.at(i) << " ";
+      }
+      cout << endl;
+   //Loop backwards through the vector.
+   for(int i=courseGrades.size()-1;i<courseGrades.size(); i--) {
+      cout << courseGrades.at(i) << " ";
+      }
+      cout << endl;
+      
+   return 0;
+}
+
+//-----------------------------------------------------------------
+Only for notes purposes, no declared variables in these functions.
+//-----------------------------------------------------------------
+
+int iteratorLoop() {
+const int NUM_ELEMENTS = 8;         // Number of elements in vector
+   vector<int> userVals(NUM_ELEMENTS); // User values
+   int i;                              // Loop index
+   int sumVal;                         // For computing sum
+   
+   cout << "Enter " << NUM_ELEMENTS << " integer values..." << endl;
+   for (i = 0; i < userVals.size(); ++i) {
+      cout << "Value: ";
+      cin >> userVals.at(i);
+      cout << endl;
+   }
+   
+   // Determine sum
+   sumVal = 0;
+   for (i = 0; i < userVals.size(); ++i) {
+      sumVal = sumVal + userVals.at(i);
+   }
+   cout << "Sum: " << sumVal << endl;
+}
+
+//-----------------------------------------------------------------
+Only for notes purposes, no declared variables in these functions.
+//-----------------------------------------------------------------
+
+int maxNumber() {
+
+cout << "Enter " << NUM_VALS << " integer numbers..." << endl;
+   for (i = 0; i < userVals.size(); ++i) {
+      cout << "Value: ";
+      cin >> userVals.at(i);
+      cout << endl;
+   }
+   
+   // Determine largest (max) number
+   maxVal = userVals.at(0);        // Largest so far
+   for (i = 0; i < userVals.size(); ++i) {
+      if (userVals.at(i) > maxVal) {
+         maxVal = userVals.at(i);
+      }
+   }
+   cout << "Max: " << maxVal << endl;
+}
