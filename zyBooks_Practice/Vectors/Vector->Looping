@@ -28,7 +28,7 @@ int main() {
 }
 
 //-----------------------------------------------------------------
-Only for notes purposes, no declared variables in these functions.
+                          Notes
 //-----------------------------------------------------------------
 
 int iteratorLoop() {
@@ -53,10 +53,15 @@ const int NUM_ELEMENTS = 8;         // Number of elements in vector
 }
 
 //-----------------------------------------------------------------
-Only for notes purposes, no declared variables in these functions.
+                          Notes
 //-----------------------------------------------------------------
 
 int maxNumber() {
+
+const int NUM_VALS = 8;         // Number of elements in vector
+   vector<int> userVals(NUM_VALS); // User values
+   int i;                          // Loop index
+   int maxVal;                     // Computed max
 
 cout << "Enter " << NUM_VALS << " integer numbers..." << endl;
    for (i = 0; i < userVals.size(); ++i) {
