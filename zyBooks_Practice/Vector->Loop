@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  //Using NUM_VALS to enter the desired size for the vector.
+   const int NUM_VALS = 4;
+   vector<int> courseGrades(NUM_VALS);
+   int i;
+
+   courseGrades.at(0) = 7;
+   courseGrades.at(1) = 9;
+   courseGrades.at(2) = 11;
+   courseGrades.at(3) = 10;
+
+   //Loop forward through the vector.
+   for(int i=0; i<courseGrades.size();i++) {
+      cout << courseGrades.at(i) << " ";
+      }
+      cout << endl;
+   //Loop backwards through the vector.
+   for(int i=courseGrades.size()-1;i<courseGrades.size(); i--) {
+      cout << courseGrades.at(i) << " ";
+      }
+      cout << endl;
+
+   return 0;
+}
